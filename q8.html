@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JAVASCRIPT TASK 8</title>
+        <style>
+            h1{
+                color:blue;
+            }
+            button{
+                margin: auto;
+            }
+            img {
+                animation: ex 5s infinite;
+            }
+            @keyframes ex {
+                0% {
+                    transform: translateX(0%);
+                }
+                50% {
+                    transform: translateX(100%);
+                }
+                100% {
+                    transform: translateX(0%);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <img id="anim" src="train.jpg" alt="train-engine" />
+        <h1>Click the following buttons to handle animation</h1>
+        <button id="start_anim">Start</button>
+        <button id="stop_anim">Stop</button>
+        <script>
+            var start_btn = document.getElementById("start_anim");
+            var stop_btn = document.getElementById("stop_anim");
+            var im = document.getElementById("anim");
+            var paused = false;
+
+            start_btn.addEventListener('click', function () {
+                if (paused) {
+                    im.style.animationPlayState = 'running';
+                    paused = false;
+                }
+            });
+            stop_btn.addEventListener('click', function () {
+                if (!paused) {
+                    im.style.animationPlayState = 'paused';
+                    paused = true;
+                }
+            });
+        </script>
+    </body>
+</html>
